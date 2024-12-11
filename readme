@@ -1,0 +1,77 @@
+# Fresh Produce Analyzer
+
+The Fresh Produce Analyzer is a Streamlit application that uses machine learning to assess the freshness of fruits and vegetables based on images. It identifies the produce, evaluates its freshness on a scale of 1-10, predicts the expected remaining shelf life, and provides key visual indicators that influenced the assessment.
+
+## Features
+
+- **Produce Identification:** Automatically identifies the type of fruit or vegetable from an image.
+- **Freshness Assessment:** Evaluates the freshness score based on visual cues.
+- **Shelf Life Prediction:** Estimates the expected remaining days of freshness.
+- **Visual Indicators:** Lists key visual features affecting the freshness.
+- **History Tracking:** Maintains a history of analyzed produce with timestamps.
+- **PDF Report Generation:** Generates a comprehensive PDF report of the analysis history.
+
+## Installation
+
+1. **Clone the Repository:**
+    ```bash
+    git clone https://github.com/your-repo/fresh-produce-analyzer.git
+    ```
+2. **Navigate to the Project Directory:**
+    ```bash
+    cd fresh-produce-analyzer/Freshness
+    ```
+3. **Install Dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Setup
+
+- **Google Cloud Credentials:**
+  - Obtain Google Cloud service account credentials with access to Vertex AI.
+  - Save the credentials JSON file and update `st.secrets` in Streamlit with your credentials and project ID.
+
+## Usage
+
+1. **Run the Application:**
+    ```bash
+    streamlit run main.py
+    ```
+2. **Input Method:**
+    - **Upload Image:** Upload an image file (`.jpg`, `.jpeg`, `.png`) of the produce.
+    - **Camera Input:** Use your device's camera to capture an image.
+3. **Analyze Produce:**
+    - Click on the **Analyze Produce** button to start the analysis.
+4. **View Results:**
+    - View the produce identification, freshness score, expected shelf life, and visual indicators.
+5. **History and Reports:**
+    - The analysis history is displayed in a table.
+    - Generate a PDF report by clicking on **Generate PDF Report**.
+
+## Project Structure
+
+- **main.py:** The main Streamlit app script that handles the UI and user interactions.
+- **analysis.py:** Contains functions to create the prompt, parse the response, and analyze the image using Vertex AI.
+- **utils.py:** Utility functions for updating the produce data.
+- **generate_pdf.py:** Generates a PDF report of the analysis history.
+- **requirements.txt:** Lists all the Python dependencies required for the project.
+
+## Dependencies
+
+- **Streamlit:** Web application framework for the UI.
+- **Vertex AI:** Google Cloud service for machine learning model predictions.
+- **Pillow:** Image processing library.
+- **Pandas:** Data manipulation and analysis.
+- **ReportLab:** Library for generating PDF documents.
+- **Google Cloud Libraries:** For accessing Google Cloud services.
+
+## Notes
+
+- Ensure you have a stable internet connection for accessing Vertex AI services.
+- The application requires access to a webcam if using the camera input option.
+- All data is stored in the session state and will be cleared when the app is restarted.
+
+## License
+
+This project is licensed under the MIT License.

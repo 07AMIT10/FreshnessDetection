@@ -1,0 +1,7 @@
+streamlit
+vertexai
+pillow
+pandas
+reportlab
+python-dateutil
+google-cloud-aiplatform
